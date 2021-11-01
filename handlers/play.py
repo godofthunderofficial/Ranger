@@ -185,7 +185,7 @@ def r_ply(type_):
             [
                 InlineKeyboardButton("📖 PLAY-LIST", "playlist"),
             ],
-            [InlineKeyboardButton("🗑 Close", "cls")],
+            [InlineKeyboardButton("✘ Close", "cls")],
         ]
     )
     return mar
@@ -426,7 +426,7 @@ async def m_cb(b, cb):
                 [
                     InlineKeyboardButton("📖 PLAY-LIST", "playlist"),
                 ],
-                [InlineKeyboardButton("🗑 Close", "cls")],
+                [InlineKeyboardButton("✘ Close", "cls")],
             ]
         )
         await cb.message.edit(stats, reply_markup=marr)
@@ -449,7 +449,7 @@ async def m_cb(b, cb):
                 await cb.message.edit(
                     nmq,
                     reply_markup=InlineKeyboardMarkup(
-                        [[InlineKeyboardButton("🗑 Close", callback_data="close")]]
+                        [[InlineKeyboardButton("✘ Close", callback_data="close")]]
                     ),
                 )
             else:
@@ -470,7 +470,7 @@ async def m_cb(b, cb):
             await cb.message.edit(
                     hps,
                     reply_markup=InlineKeyboardMarkup(
-                        [[InlineKeyboardButton("🗑 Close", callback_data="close")]]
+                        [[InlineKeyboardButton("✘ Close", callback_data="close")]]
                     ),
                 )
         else:
@@ -487,7 +487,7 @@ async def play(_, message: Message):
             [
                 InlineKeyboardButton("Command Syntax", callback_data="cmdsyntax")
             ],[
-                InlineKeyboardButton("🗑 Close", callback_data="close")
+                InlineKeyboardButton("✘ Close", callback_data="close")
             ]
         ]
     )
@@ -579,13 +579,8 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🖱 ᴍᴇɴᴜ", callback_data="menu"),
-                    InlineKeyboardButton("🗑 ᴄʟᴏsᴇ", callback_data="cls"),
-                ],[
-                    InlineKeyboardButton("📣 ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/{UPDATES_CHANNEL}"),
-                    InlineKeyboardButton("✨ ɢʀᴏᴜᴘ", url=f"https://t.me/{GROUP_SUPPORT}"),
-                ],[
-                    InlineKeyboardButton("👑 Owner", url=f"https://t.me/{OWNER_NAME}"),
+                    InlineKeyboardButton("• ᴍᴇɴᴜ", callback_data="menu"),
+                    InlineKeyboardButton("✘ ᴄʟᴏsᴇ", callback_data="cls"),
                 ],
             ]
         )
@@ -630,13 +625,8 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🖱 ᴍᴇɴᴜ", callback_data="menu"),
-                    InlineKeyboardButton("🗑 ᴄʟᴏsᴇ", callback_data="cls"),
-                ],[
-                    InlineKeyboardButton("📣 ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/{UPDATES_CHANNEL}"),
-                    InlineKeyboardButton("✨ ɢʀᴏᴜᴘ", url=f"https://t.me/{GROUP_SUPPORT}"),
-                ],[
-                    InlineKeyboardButton("👑 Owner", url=f"https://t.me/{OWNER_NAME}"),
+                    InlineKeyboardButton("• ᴍᴇɴᴜ", callback_data="menu"),
+                    InlineKeyboardButton("• ᴄʟᴏsᴇ", callback_data="cls"),
                 ],
             ]
         )
@@ -661,7 +651,7 @@ async def play(_, message: Message):
             toxxt = "\n"
             j = 0
             user = user_name
-            emojilist = ["1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣"]
+           emojilist =  ["➊", "➋", "➌", "➍", "➎"]
             while j < 5:
                 toxxt += f"{emojilist[j]} [{results[j]['title'][:25]}...](https://youtube.com{results[j]['url_suffix']})\n"
                 toxxt += f" ├ 💡 **Duration** - `{results[j]['duration']}`\n"
@@ -671,28 +661,25 @@ async def play(_, message: Message):
                 [
                     [
                         InlineKeyboardButton(
-                            "1️⃣", callback_data=f"plll 0|{query}|{user_id}"
+                            "➊", callback_data=f"plll 0|{query}|{user_id}"
                         ),
                         InlineKeyboardButton(
-                            "2️⃣", callback_data=f"plll 1|{query}|{user_id}"
+                            "➋", callback_data=f"plll 1|{query}|{user_id}"
                         ),
                         InlineKeyboardButton(
-                            "3️⃣", callback_data=f"plll 2|{query}|{user_id}"
+                            "➌", callback_data=f"plll 2|{query}|{user_id}"
                         ),
                     ],
                     [
                         InlineKeyboardButton(
-                            "4️⃣", callback_data=f"plll 3|{query}|{user_id}"
+                            "➍", callback_data=f"plll 3|{query}|{user_id}"
                         ),
                         InlineKeyboardButton(
-                            "5️⃣", callback_data=f"plll 4|{query}|{user_id}"
+                            "➎", callback_data=f"plll 4|{query}|{user_id}"
                         ),
                     ],
-                    [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
+                    [InlineKeyboardButton(text="✘ Close", callback_data="cls")],
                 ]
-            )
-            await message.reply_photo(
-                photo=f"{THUMB_IMG}", caption=toxxt, reply_markup=keyboard
             )
 
             await lel.delete()
@@ -726,13 +713,8 @@ async def play(_, message: Message):
             keyboard = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("🖱 ᴍᴇɴᴜ", callback_data="menu"),
-                        InlineKeyboardButton("🗑 ᴄʟᴏsᴇ", callback_data="cls"),
-                    ],[
-                        InlineKeyboardButton("📣 ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/{UPDATES_CHANNEL}"),
-                        InlineKeyboardButton("✨ ɢʀᴏᴜᴘ", url=f"https://t.me/{GROUP_SUPPORT}"),
-                    ],[
-                        InlineKeyboardButton("👑 Owner", url=f"https://t.me/{OWNER_NAME}"),
+                        InlineKeyboardButton("• ᴍᴇɴᴜ", callback_data="menu"),
+                        InlineKeyboardButton("✘ ᴄʟᴏsᴇ", callback_data="cls"),
                     ],
                 ]
             )
@@ -751,7 +733,7 @@ async def play(_, message: Message):
         await lel.delete()
         await message.reply_photo(
             photo="final.png",
-            caption=f"💡 **Track added to queue »** `{position}`\n\n🏷 **Name:** [{title[:35]}...]({url})\n⏱ **Duration:** `{duration}`\n🎧 **Request by:** {message.from_user.mention}",
+            caption=f"♻️ **Track added to queue »** `{position}`\n\n🎸 **Song:** [{title[:35]}...]({url})\n⏰ **Duration:** `{duration}`\n🙋‍♂️ **Played by:** {message.from_user.mention}",
             reply_markup=keyboard,
         )
     else:
@@ -773,8 +755,8 @@ async def play(_, message: Message):
         await lel.delete()
         await message.reply_photo(
             photo="final.png",
-            caption=f"🏷 **Name:** [{title[:70]}]({url})\n⏱ **Duration:** `{duration}`\n💡 **Status:** `Playing`\n"
-            + f"🎧 **Request by:** {message.from_user.mention}",
+            caption=f"🎸 **Song:** [{title[:70]}]({url})\n⏰ **Duration:** `{duration}`\n💡 **Status:** `Playing`\n"
+                    + f"🙋‍♂️ **Played by:** {message.from_user.mention}\n\n🏖 **Now Playing at:** {message.chat.title}",
             reply_markup=keyboard,
         )
         os.remove("final.png")
@@ -788,7 +770,7 @@ async def lol_cb(b, cb):
             [
                 InlineKeyboardButton("Command Syntax", callback_data="cmdsyntax")
             ],[
-                InlineKeyboardButton("🗑 Close", callback_data="close")
+                InlineKeyboardButton("✘ Close", callback_data="close")
             ]
         ]
     )
@@ -812,7 +794,7 @@ async def lol_cb(b, cb):
     if cb.from_user.id != useer_id:
         await cb.answer("💡 sorry, this is not for you !", show_alert=True)
         return
-    await cb.answer("🔄 downloading song you requested...", show_alert=True)
+    await cb.answer("💡 downloading song you requested...", show_alert=True)
     x = int(x)
     try:
         cb.message.reply_to_message.from_user.first_name
@@ -849,13 +831,8 @@ async def lol_cb(b, cb):
     keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("🖱 ᴍᴇɴᴜ", callback_data="menu"),
-                InlineKeyboardButton("🗑 ᴄʟᴏsᴇ", callback_data="cls"),
-            ],[
-                InlineKeyboardButton("📣 ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/{UPDATES_CHANNEL}"),
-                InlineKeyboardButton("✨ ɢʀᴏᴜᴘ", url=f"https://t.me/{GROUP_SUPPORT}"),
-            ],[
-                InlineKeyboardButton("👑 Owner", url=f"https://t.me/{OWNER_NAME}"),
+                InlineKeyboardButton("• ᴍᴇɴᴜ", callback_data="menu"),
+                InlineKeyboardButton("• ᴄʟᴏsᴇ", callback_data="cls"),
             ],
         ]
     )
@@ -876,7 +853,7 @@ async def lol_cb(b, cb):
         await b.send_photo(
             chat_id,
             photo="final.png",
-            caption=f"💡 **Track added to queue »** `{position}`\n\n🏷 **Name:** [{title[:35]}...]({url})\n⏱ **Duration:** `{duration}`\n🎧 **Request by:** {r_by.mention()}",
+              caption=f"♻️ **Track added to queue »** `{position}`\n\n🎸 **Song:** [{title[:35]}...]({url})\n⏰ **Duration:** `{duration}`\n🙋‍♂️ **Played by:** {r_by.mention()}",
             reply_markup=keyboard,
         )
     else:
@@ -895,8 +872,8 @@ async def lol_cb(b, cb):
         await b.send_photo(
             chat_id,
             photo="final.png",
-            caption=f"🏷 **Name:** [{title[:70]}]({url})\n⏱ **Duration:** `{duration}`\n💡 **Status:** `Playing`\n"
-            + f"🎧 **Request by:** {r_by.mention()}",
+            caption=f"🎸 **Song:** [{title[:70]}]({url})\n⏰ **Duration:** `{duration}`\n✔️ **Status:** `Playing`\n"
+            + f"🙋‍♂️ **Played by:** {r_by.mention()}",
             reply_markup=keyboard,
         )
     if path.exists("final.png"):
@@ -911,7 +888,7 @@ async def ytplay(_, message: Message):
             [
                 InlineKeyboardButton("Command Syntax", callback_data="cmdsyntax")
             ],[
-                InlineKeyboardButton("🗑 Close", callback_data="close")
+                InlineKeyboardButton("• Close", callback_data="close")
             ]
         ]
     )
@@ -1038,7 +1015,7 @@ async def ytplay(_, message: Message):
         await lel.delete()
         await message.reply_photo(
             photo="final.png",
-            caption=f"💡 **Track added to queue »** `{position}`\n\n🏷 **Name:** [{title[:35]}...]({url})\n⏱ **Duration:** `{duration}`\n🎧 **Request by:** {message.from_user.mention}",
+            caption=f"♻️ **Track added to queue »** `{position}`\n\n🎸 **Name:** [{title[:35]}...]({url})\n⏰ **Duration:** `{duration}`\n🙋‍♂️ **Played by:** {message.from_user.mention}",
             reply_markup=keyboard,
         )
     else:
@@ -1060,8 +1037,8 @@ async def ytplay(_, message: Message):
         await lel.delete()
         await message.reply_photo(
             photo="final.png",
-            caption=f"🏷 **Name:** [{title[:70]}]({url})\n⏱ **Duration:** `{duration}`\n💡 **Status:** `Playing`\n"
-            + f"🎧 **Request by:** {message.from_user.mention}",
+            caption=f"🎸 **Name:** [{title[:70]}]({url})\n⏰ **Duration:** `{duration}`\n✔️ **Status:** `Playing`\n"
+                    + f"🙋‍♂️ **Played by:** {message.from_user.mention}\n\n🏖 **Now Playing at:** {message.chat.title}",
             reply_markup=keyboard,
         )
         os.remove("final.png")
